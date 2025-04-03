@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+ 
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: rgba(0, 51, 102, 0.9);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+.container1 {
+    
+    background: rgba(255, 255, 255, 0.9);
+    background-image: url(vecteezy_books-and-plant-on-turquoise-background_55959888.jpeg) ;
+    background-size: cover;
+    height:70vh;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.container2 {
+ 
+
+    background: rgba(202, 191, 110, 0.884);
+    
+    background-size: cover;
+    height:70vh;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.categories {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.categories li {
+    background: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+footer {
+    background: rgba(0, 51, 102, 0.9);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.countdown-container {
+    text-align: center;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#countdown {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2ebf91;
+    background: #f1f1f1;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
