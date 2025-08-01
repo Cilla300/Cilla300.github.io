@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weird Music Studio Pro</title>
+    <link rel="stylesheet" href="../moosify/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>🎵 Weird Music Studio Pro 🎵</h1>
+        <p class="subtitle">"Where Normal Music Goes to Die"</p>
+    </div>
+
+    <div class="main-container">
+        <div class="feature-grid">
+            <!-- Instrument Selection -->
+            <div class="feature-card">
+                <h3 class="feature-title">🎹 Choose Your Weapon</h3>
+                <button class="btn" onclick="toggleInstruments()">Choose Instruments</button>
+
+                <div class="instruments-grid" id="instrumentsGrid">
+                    <button class="instrument-btn" onclick="showPiano()">🎹 Piano</button>
+                    <button class="instrument-btn" onclick="showDrums()">🥁 Drums</button>
+                    <button class="instrument-btn" onclick="showGuitar()">🎸 Guitar</button>
+                    <button class="instrument-btn" onclick="showTrumpet()">🎺 Trumpet</button>
+                </div>
+
+                <!-- Piano -->
+                <div class="piano" id="piano">
+                    <h4 style="color: white; text-align: center; margin-bottom: 1rem;">🐄 Moo-Piano 🐄</h4>
+                    <div class="piano-keys">
+                        <div class="key" onclick="playWeirdSound('cow')">C</div>
+                        <div class="key black" onclick="playWeirdSound('goat')">C#</div>
+                        <div class="key" onclick="playWeirdSound('sheep')">D</div>
+                        <div class="key black" onclick="playWeirdSound('pig')">D#</div>
+                        <div class="key" onclick="playWeirdSound('duck')">E</div>
+                        <div class="key" onclick="playWeirdSound('chicken')">F</div>
+                        <div class="key black" onclick="playWeirdSound('horse')">F#</div>
+                        <div class="key" onclick="playWeirdSound('dog')">G</div>
+                        <div class="key black" onclick="playWeirdSound('cat')">G#</div>
+                        <div class="key" onclick="playWeirdSound('frog')">A</div>
+                        <div class="key black" onclick="playWeirdSound('owl')">A#</div>
+                        <div class="key" onclick="playWeirdSound('elephant')">B</div>
+                    </div>
+                </div>
+
+                <!-- Drums -->
+                <div class="drums" id="drums">
+                    <h4>🤖 Robo-Drums 🤖</h4>
+                    <div class="drum-kit">
+                        <div class="drum" onclick="playWeirdSound('beep')">BEEP</div>
+                        <div class="drum" onclick="playWeirdSound('boop')">BOOP</div>
+                        <div class="drum" onclick="playWeirdSound('buzz')">BUZZ</div>
+                        <div class="drum" onclick="playWeirdSound('whir')">WHIR</div>
+                        <div class="drum" onclick="playWeirdSound('zap')">ZAP</div>
+                        <div class="drum" onclick="playWeirdSound('ping')">PING</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Recording -->
+            <div class="feature-card">
+                <h3 class="feature-title">🎤 Sing Like an Alien</h3>
+                <div class="recording-section">
+                    <button class="record-btn" id="recordBtn" onclick="toggleRecording()">🎤<br>SING</button>
+                    <div class="status-display" id="recordStatus">Ready to destroy your voice!</div>
+                    <p style="margin-top: 1rem; font-style: italic;">Your voice will be replaced with random weird sounds</p>
+                </div>
+            </div>
+
+            <!-- Chaos Meter -->
+            <div class="feature-card">
+                <h3 class="feature-title">📊 Chaos Level</h3>
+                <div class="chaos-meter">
+                    <div class="chaos-fill" id="chaosLevel"></div>
+                </div>
+                <p id="chaosText">Chaos Level: Surprisingly Normal</p>
+                <button class="btn btn-secondary" onclick="addChaos()">Add More Chaos!</button>
+            </div>
+
+            <!-- Random Features -->
+            <div class="feature-card">
+                <h3 class="feature-title">🎭 Bonus Chaos</h3>
+                <button class="btn btn-success" onclick="summonRainbow()">🌈 Summon Rainbow</button>
+                <button class="btn btn-success" onclick="toggleGravity()">🌍 Toggle Gravity</button>
+                <button class="btn btn-success" onclick="activateDiscoMode()">🕺 Disco Mode</button>
+                <button class="btn btn-success" onclick="makeEverythingWiggle()">🔄 Wiggle Mode</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Easter Egg -->
+    <div class="easter-egg" onclick="secretFeature()">🎪</div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3>🎉 Secret Feature Unlocked! 🎉</h3>
+            <p>You found the secret circus mode!</p>
+            <button class="btn" onclick="closeModal()">Amazing!</button>
+        </div>
+    </div>
+
+    <script src="../moosify/js/script.js"></script>
+</body>
+</html>
