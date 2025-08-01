@@ -3,105 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weird Music Studio Pro</title>
-    <link rel="stylesheet" href="../moosify/css/style.css">
+    <title>🐄 Weird Music Maker - Where Animals Rule the Symphony! 🎵</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐄</text></svg>">
 </head>
 <body>
-    <div class="header">
-        <h1>🎵 Weird Music Studio Pro 🎵</h1>
-        <p class="subtitle">"Where Normal Music Goes to Die"</p>
-    </div>
-
-    <div class="main-container">
-        <div class="feature-grid">
-            <!-- Instrument Selection -->
-            <div class="feature-card">
-                <h3 class="feature-title">🎹 Choose Your Weapon</h3>
-                <button class="btn" onclick="toggleInstruments()">Choose Instruments</button>
-
-                <div class="instruments-grid" id="instrumentsGrid">
-                    <button class="instrument-btn" onclick="showPiano()">🎹 Piano</button>
-                    <button class="instrument-btn" onclick="showDrums()">🥁 Drums</button>
-                    <button class="instrument-btn" onclick="showGuitar()">🎸 Guitar</button>
-                    <button class="instrument-btn" onclick="showTrumpet()">🎺 Trumpet</button>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">
+                <span class="emoji">🐄</span>
+                Weird Music Maker
+                <span class="emoji">🎵</span>
+            </h1>
+            <p class="subtitle">Where Professional Musicians Fear to Tread!</p>
+            <div class="chaos-meter">
+                <span>Chaos Level: </span>
+                <div class="meter">
+                    <div class="meter-fill" id="chaosLevel"></div>
                 </div>
+                <span id="chaosText">Normal</span>
+            </div>
+        </header>
 
-                <!-- Piano -->
-                <div class="piano" id="piano">
-                    <h4 style="color: white; text-align: center; margin-bottom: 1rem;">🐄 Moo-Piano 🐄</h4>
-                    <div class="piano-keys">
-                        <div class="key" onclick="playWeirdSound('cow')">C</div>
-                        <div class="key black" onclick="playWeirdSound('goat')">C#</div>
-                        <div class="key" onclick="playWeirdSound('sheep')">D</div>
-                        <div class="key black" onclick="playWeirdSound('pig')">D#</div>
-                        <div class="key" onclick="playWeirdSound('duck')">E</div>
-                        <div class="key" onclick="playWeirdSound('chicken')">F</div>
-                        <div class="key black" onclick="playWeirdSound('horse')">F#</div>
-                        <div class="key" onclick="playWeirdSound('dog')">G</div>
-                        <div class="key black" onclick="playWeirdSound('cat')">G#</div>
-                        <div class="key" onclick="playWeirdSound('frog')">A</div>
-                        <div class="key black" onclick="playWeirdSound('owl')">A#</div>
-                        <div class="key" onclick="playWeirdSound('elephant')">B</div>
+        <!-- Main Controls -->
+        <div class="main-controls">
+            <button class="big-button chaos-btn" id="chaosMode">
+                🌪️ CHAOS MODE 🌪️
+            </button>
+            <button class="big-button" id="stopAll">
+                🛑 STOP THE MADNESS
+            </button>
+        </div>
+
+        <!-- Animal Orchestra Section -->
+        <section class="section">
+            <h2>🎭 Animal Orchestra</h2>
+            <div class="instrument-grid">
+                <div class="instrument-card" data-sound="cow">
+                    <div class="instrument-icon">🐄</div>
+                    <div class="instrument-name">Cow Piano</div>
+                    <button class="play-btn">MOO IT!</button>
+                </div>
+                <div class="instrument-card" data-sound="sheep">
+                    <div class="instrument-icon">🐑</div>
+                    <div class="instrument-name">Sheep Drums</div>
+                    <button class="play-btn">BAA BEAT!</button>
+                </div>
+                <div class="instrument-card" data-sound="pig">
+                    <div class="instrument-icon">🐷</div>
+                    <div class="instrument-name">Pig Guitar</div>
+                    <button class="play-btn">OINK ROCK!</button>
+                </div>
+                <div class="instrument-card" data-sound="chicken">
+                    <div class="instrument-icon">🐔</div>
+                    <div class="instrument-name">Chicken Bass</div>
+                    <button class="play-btn">CLUCK BASS!</button>
+                </div>
+                <div class="instrument-card" data-sound="duck">
+                    <div class="instrument-icon">🦆</div>
+                    <div class="instrument-name">Duck Synth</div>
+                    <button class="play-btn">QUACK SYNTH!</button>
+                </div>
+                <div class="instrument-card" data-sound="cat">
+                    <div class="instrument-icon">🐱</div>
+                    <div class="instrument-name">Cat Violin</div>
+                    <button class="play-btn">MEOW STRINGS!</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Virtual Keyboard -->
+        <section class="section">
+            <h2>🎹 Animal Sound Keyboard</h2>
+            <div class="keyboard">
+                <div class="key white-key" data-note="C4" data-sound="cow">🐄</div>
+                <div class="key black-key" data-note="C#4" data-sound="pig">🐷</div>
+                <div class="key white-key" data-note="D4" data-sound="sheep">🐑</div>
+                <div class="key black-key" data-note="D#4" data-sound="chicken">🐔</div>
+                <div class="key white-key" data-note="E4" data-sound="duck">🦆</div>
+                <div class="key white-key" data-note="F4" data-sound="cat">🐱</div>
+                <div class="key black-key" data-note="F#4" data-sound="dog">🐶</div>
+                <div class="key white-key" data-note="G4" data-sound="horse">🐴</div>
+                <div class="key black-key" data-note="G#4" data-sound="goat">🐐</div>
+                <div class="key white-key" data-note="A4" data-sound="elephant">🐘</div>
+                <div class="key black-key" data-note="A#4" data-sound="lion">🦁</div>
+                <div class="key white-key" data-note="B4" data-sound="monkey">🐵</div>
+            </div>
+        </section>
+
+        <!-- Voice Recording Section -->
+        <section class="section">
+            <h2>🎤 Weird Voice Studio</h2>
+            <div class="recording-studio">
+                <div class="recording-controls">
+                    <button class="record-btn" id="recordBtn">
+                        <span class="record-icon">🎤</span>
+                        <span class="record-text">Start Recording</span>
+                    </button>
+                    <button class="play-btn" id="playRecording" disabled>
+                        🔊 Play Weird Version
+                    </button>
+                    <button class="download-btn" id="downloadRecording" disabled>
+                        💾 Download Masterpiece
+                    </button>
+                </div>
+                <div class="voice-effects">
+                    <h3>Choose Your Transformation:</h3>
+                    <div class="effects-grid">
+                        <label class="effect-option">
+                            <input type="radio" name="effect" value="robot" checked>
+                            <span>🤖 Robot Mode</span>
+                        </label>
+                        <label class="effect-option">
+                            <input type="radio" name="effect" value="chipmunk">
+                            <span>🐿️ Chipmunk Style</span>
+                        </label>
+                        <label class="effect-option">
+                            <input type="radio" name="effect" value="demon">
+                            <span>👹 Demon Voice</span>
+                        </label>
+                        <label class="effect-option">
+                            <input type="radio" name="effect" value="underwater">
+                            <span>🌊 Underwater</span>
+                        </label>
+                        <label class="effect-option">
+                            <input type="radio" name="effect" value="alien">
+                            <span>👽 Alien Speech</span>
+                        </label>
+                        <label class="effect-option">
+                            <input type="radio" name="effect" value="reversed">
+                            <span>🔄 Backwards</span>
+                        </label>
                     </div>
                 </div>
-
-                <!-- Drums -->
-                <div class="drums" id="drums">
-                    <h4>🤖 Robo-Drums 🤖</h4>
-                    <div class="drum-kit">
-                        <div class="drum" onclick="playWeirdSound('beep')">BEEP</div>
-                        <div class="drum" onclick="playWeirdSound('boop')">BOOP</div>
-                        <div class="drum" onclick="playWeirdSound('buzz')">BUZZ</div>
-                        <div class="drum" onclick="playWeirdSound('whir')">WHIR</div>
-                        <div class="drum" onclick="playWeirdSound('zap')">ZAP</div>
-                        <div class="drum" onclick="playWeirdSound('ping')">PING</div>
-                    </div>
+                <div class="recording-visualizer">
+                    <canvas id="visualizer" width="400" height="100"></canvas>
                 </div>
             </div>
+        </section>
 
-            <!-- Voice Recording -->
-            <div class="feature-card">
-                <h3 class="feature-title">🎤 Sing Like an Alien</h3>
-                <div class="recording-section">
-                    <button class="record-btn" id="recordBtn" onclick="toggleRecording()">🎤<br>SING</button>
-                    <div class="status-display" id="recordStatus">Ready to destroy your voice!</div>
-                    <p style="margin-top: 1rem; font-style: italic;">Your voice will be replaced with random weird sounds</p>
+        <!-- Random Generators -->
+        <section class="section">
+            <h2>🎲 Random Weirdness Generators</h2>
+            <div class="generators">
+                <div class="generator-card">
+                    <h3>🎵 Random Song Generator</h3>
+                    <button class="gen-btn" id="randomSong">Generate Masterpiece</button>
+                    <div class="song-display" id="songDisplay"></div>
+                </div>
+                <div class="generator-card">
+                    <h3>🔊 Sound Mixer</h3>
+                    <button class="gen-btn" id="soundMixer">Mix Random Sounds</button>
+                    <div class="mixer-display" id="mixerDisplay"></div>
+                </div>
+                <div class="generator-card">
+                    <h3>🎪 Circus Mode</h3>
+                    <button class="gen-btn" id="circusMode">Start the Circus!</button>
                 </div>
             </div>
+        </section>
 
-            <!-- Chaos Meter -->
-            <div class="feature-card">
-                <h3 class="feature-title">📊 Chaos Level</h3>
-                <div class="chaos-meter">
-                    <div class="chaos-fill" id="chaosLevel"></div>
-                </div>
-                <p id="chaosText">Chaos Level: Surprisingly Normal</p>
-                <button class="btn btn-secondary" onclick="addChaos()">Add More Chaos!</button>
+        <!-- Achievement System -->
+        <section class="section">
+            <h2>🏆 Weird Achievements</h2>
+            <div class="achievements" id="achievements">
+                <!-- Achievements will be populated by JavaScript -->
             </div>
+        </section>
 
-            <!-- Random Features -->
-            <div class="feature-card">
-                <h3 class="feature-title">🎭 Bonus Chaos</h3>
-                <button class="btn btn-success" onclick="summonRainbow()">🌈 Summon Rainbow</button>
-                <button class="btn btn-success" onclick="toggleGravity()">🌍 Toggle Gravity</button>
-                <button class="btn btn-success" onclick="activateDiscoMode()">🕺 Disco Mode</button>
-                <button class="btn btn-success" onclick="makeEverythingWiggle()">🔄 Wiggle Mode</button>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🎭 Created for the Ultimate Useless Project Competition 🎭</p>
+            <p>Warning: May cause uncontrollable laughter and confused neighbors</p>
+            <div class="social-links">
+                <span>Share your weirdness:</span>
+                <button class="share-btn" onclick="shareWeirdness()">📱 Share</button>
             </div>
-        </div>
+        </footer>
     </div>
 
-    <!-- Easter Egg -->
-    <div class="easter-egg" onclick="secretFeature()">🎪</div>
-
-    <!-- Modal -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <h3>🎉 Secret Feature Unlocked! 🎉</h3>
-            <p>You found the secret circus mode!</p>
-            <button class="btn" onclick="closeModal()">Amazing!</button>
-        </div>
+    <!-- Audio Elements (hidden) -->
+    <div class="audio-elements" style="display: none;">
+        <!-- Preloaded audio will be added by JavaScript -->
     </div>
 
-    <script src="../moosify/js/script.js"></script>
+    <script src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

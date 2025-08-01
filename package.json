@@ -1,0 +1,20 @@
+{
+  "name": "weird-music-maker",
+  "version": "1.0.0",
+  "description": "The Ultimate Useless Music Website - Where Animals Make Music!",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "dev": "npx live-server --port=3000 --open=index.html"
+  },
+  "keywords": ["music", "weird", "animals", "hackathon", "useless", "funny"],
+  "author": "Team Weird Music",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "tone": "^14.7.77"
+  }
+}
