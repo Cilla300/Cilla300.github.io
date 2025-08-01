@@ -1,0 +1,600 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .page {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff4757, #ff3838);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin: 0.5rem;
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 1rem auto;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, #5f27cd, #341f97);
+        }
+
+        .btn-back {
+            background: linear-gradient(45deg, #2c2c54, #40407a);
+            max-width: 200px;
+            margin: 1rem 0;
+        }
+
+        .instruments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .instrument-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .instrument-card:hover {
+            transform: scale(1.05) rotate(-2deg);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .instrument-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .instrument-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .piano {
+            background: rgba(0,0,0,0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .piano h4 {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .piano-keys {
+            display: flex;
+            justify-content: center;
+            gap: 2px;
+            flex-wrap: wrap;
+        }
+
+        .key {
+            width: 50px;
+            height: 200px;
+            background: white;
+            border: 2px solid #333;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .key:hover {
+            background: #f0f0f0;
+            transform: scale(0.98);
+        }
+
+        .key.black {
+            width: 30px;
+            height: 120px;
+            background: #333;
+            color: white;
+            margin: 0 -15px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .drums {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .drum-kit {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+
+        .drum {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            border: 4px solid #333;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: all 0.1s ease;
+            font-size: 0.9rem;
+        }
+
+        .drum:hover {
+            transform: scale(0.9);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .guitar {
+            background: rgba(139, 69, 19, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .guitar h4 {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .guitar-body {
+            background: linear-gradient(45deg, #8B4513, #A0522D);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 3px solid #654321;
+        }
+
+        .guitar-strings {
+            margin-bottom: 2rem;
+        }
+
+        .guitar-string {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .guitar-string:hover {
+            transform: scale(1.02);
+        }
+
+        .string-label {
+            background: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            margin-right: 1rem;
+            font-weight: bold;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .string-line {
+            flex: 1;
+            height: 4px;
+            background: linear-gradient(90deg, #C0C0C0, #FFD700);
+            border-radius: 2px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .guitar-string:hover .string-line {
+            animation: stringVibrate 0.3s ease-in-out;
+        }
+
+        @keyframes stringVibrate {
+            0%, 100% { transform: scaleY(1); }
+            25% { transform: scaleY(1.5); }
+            50% { transform: scaleY(0.5); }
+            75% { transform: scaleY(1.5); }
+        }
+
+        .guitar-frets {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1rem;
+        }
+
+        .fret {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            padding: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            border: 2px solid #B8860B;
+        }
+
+        .fret:hover {
+            transform: scale(0.95);
+            background: linear-gradient(45deg, #FFA500, #FF8C00);
+        }
+
+        .trumpet {
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 3px solid rgba(255, 215, 0, 0.5);
+        }
+
+        .trumpet h4 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .trumpet-body {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 3px solid #B8860B;
+        }
+
+        .trumpet-valves {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+        }
+
+        .valve {
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .valve:hover {
+            transform: scale(1.1);
+        }
+
+        .valve-button {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #C0C0C0, #E6E6FA);
+            border: 3px solid #808080;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .valve:hover .valve-button {
+            background: linear-gradient(45deg, #E6E6FA, #DDA0DD);
+            transform: translateY(2px);
+        }
+
+        .valve span {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .trumpet-mouthpiece {
+            text-align: center;
+            margin: 2rem 0;
+            cursor: pointer;
+        }
+
+        .mouthpiece {
+            background: linear-gradient(45deg, #C0C0C0, #DCDCDC);
+            border: 3px solid #808080;
+            border-radius: 20px;
+            padding: 1rem 2rem;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .trumpet-mouthpiece:hover .mouthpiece {
+            background: linear-gradient(45deg, #DCDCDC, #F0F8FF);
+            transform: scale(1.05);
+        }
+
+        .trumpet-notes {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1rem;
+        }
+
+        .note-btn {
+            background: linear-gradient(45deg, #4169E1, #6495ED);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            border: 2px solid #1E90FF;
+        }
+
+        .note-btn:hover {
+            background: linear-gradient(45deg, #6495ED, #87CEEB);
+            transform: scale(1.05);
+        }
+
+        .recording-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .record-btn {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            margin: 2rem auto;
+            display: block;
+        }
+
+        .record-btn:hover {
+            transform: scale(1.1);
+            animation: pulse 1s infinite;
+        }
+
+        .record-btn.recording {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            animation: recordingPulse 0.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+            70% { box-shadow: 0 0 0 30px rgba(231, 76, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+        }
+
+        @keyframes recordingPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .status-display {
+            background: rgba(0,0,0,0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem auto;
+            text-align: center;
+            font-weight: bold;
+            max-width: 400px;
+        }
+
+        .chaos-meter {
+            width: 100%;
+            height: 20px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .chaos-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2ecc71, #f39c12, #e74c3c);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+
+        .easter-egg {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            animation: spin 3s linear infinite;
+            z-index: 1000;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            animation: modalPop 0.3s ease;
+        }
+
+        @keyframes modalPop {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .upload-area {
+            border: 2px dashed rgba(255,255,255,0.5);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .upload-area:hover {
+            border-color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .upload-btn {
+            background: linear-gradient(45deg, #3742fa, #2f3542);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .upload-btn:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .piano-keys {
+                transform: scale(0.8);
+            }
+            
+            .drum-kit {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    
