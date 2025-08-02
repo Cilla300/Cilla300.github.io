@@ -1,5 +1,3 @@
-<img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
-
 
 # [MooSIFY] 🎯
 
@@ -32,7 +30,7 @@ For Software:
 ### Implementation
 For Software:
 # Installation
-[No installation required. Just open index.html in any browser.]
+[git clone https://github.com/Cilla300/Cilla300.github.io.git]
 
 # Run
 [Just double-click index.html or use Live Server in VS Code.]
