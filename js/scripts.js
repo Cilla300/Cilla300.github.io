@@ -89,6 +89,11 @@
 
         function playWeirdSound(soundType) {
             const sound = weirdSounds[soundType];
+            const audio = document.getElementById(`audio-${soundType}`);
+            if (audio) {
+                audio.currentTime = 0; // rewind to start
+                audio.play();
+            }
 
             // Create floating text effect
             const floatingText = document.createElement('div');
@@ -145,6 +150,14 @@
 
             clearTimeout(recordingTimeout);
 
+            const audio = document.getElementById("alienAudio");
+             audio.currentTime = 0;
+             audio.play();
+
+
+
+            
+
             // Show "playback" of weird sounds
             const weirdResults = [
                 "🤖 BEEP BOOP BEEP (was 'Hello')",
@@ -154,6 +167,7 @@
                 "👽 BLORG BLORG ZZZAP (was 'Amazing app!')",
                 "🤖 WHIRR BUZZ PING (was 'Let me sing')"
             ];
+       
 
             const randomResult = weirdResults[Math.floor(Math.random() * weirdResults.length)];
             status.textContent = `Playback: ${randomResult}`;
@@ -162,6 +176,10 @@
                 status.textContent = 'Ready to transform your voice again!';
             }, 4000);
         }
+        function setEffect(effect) {
+            document.getElementById('effectType').value = effect;
+          }
+          
 
         function handleFileUpload(event) {
             const file = event.target.files[0];
@@ -175,7 +193,6 @@
                 // Simulate processing
                 setTimeout(() => {
                     const transformedResults = [
-                        "🛸 Your audio has been converted to Martian frequency!",
                         "👽 File transformed into alien communication signals!",
                         "🤖 Audio successfully robotified and beep-ified!",
                         "🎪 Your sound is now pure circus chaos!"

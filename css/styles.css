@@ -41,8 +41,11 @@
         .header h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color:white;
+            text-shadow: 2px 2px 4px rgb(160, 110, 192);
             animation: bounce 2s infinite;
+            font-family: "Times New Roman", Times, serif;
+           
         }
 
         @keyframes bounce {
@@ -55,6 +58,7 @@
             font-size: 1.2rem;
             opacity: 0.8;
             font-style: italic;
+            color:white;
         }
 
         .main-container {
@@ -68,6 +72,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
+            color:white;
         }
 
         .feature-card {
@@ -597,4 +602,14 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
+        #mainPage{
+            background-image: url('../assets/WhatsApp\ Image\ 2025-08-02\ at\ 5.52.09\ AM.jpeg'); /* adjust path as needed */
+            background-size: cover;       /* fills the entire screen */
+            background-position: center;  /* centers the image */
+            background-repeat: no-repeat; /* prevents tiling */
+            height: 100vh;                /* ensures full height */
+            margin: 0;                    /* remove default margin */
+        }
+    
     

@@ -12,7 +12,7 @@
     <!-- Main Page -->
     <div class="page active" id="mainPage">
         <div class="header">
-            <h1>🎵M00SIFY🎵</h1>
+            <h1>🎵MooSIFY🎵</h1>
             <p class="subtitle">"Where Normal Music Goes to Die"</p>
         </div>
 
@@ -25,13 +25,6 @@
                     <button class="btn" onclick="goToInstruments()">Choose Instruments</button>
                 </div>
 
-                <!-- Voice Recording -->
-                <div class="feature-card">
-                    <h3 class="feature-title">🎤 Sing Like a Nightingale</h3>
-                    <p style="text-align: center; margin-bottom: 1rem;">Record your voice and transform it into otherworldly sounds!</p>
-                    <button class="btn" onclick="goToRecording()">Start Recording</button>
-                </div>
-
                 <!-- Chaos Meter -->
                 <div class="feature-card">
                     <h3 class="feature-title">📊 Chaos Level</h3>
@@ -41,6 +34,14 @@
                     <p id="chaosText">Chaos Level: Surprisingly Normal</p>
                     <button class="btn btn-secondary" onclick="addChaos()">Add More Chaos!</button>
                 </div>
+
+                 <!-- Voice Recording -->
+                 <div class="feature-card">
+                    <h3 class="feature-title">🎤 Sing Like a Nightingale</h3>
+                    <p style="text-align: center; margin-bottom: 1rem;">Record your voice and transform it into otherworldly sounds!</p>
+                    <button class="btn" onclick="goToRecording()">Start Recording</button>
+                </div>
+
             </div>
         </div>
     </div>
@@ -186,7 +187,7 @@
     <!-- Recording Page -->
     <div class="page" id="recordingPage">
         <div class="header">
-            <h1>🎤 Alien Voice Lab 🎤</h1>
+            <h1>🎤 Voice Lab 🎤</h1>
             <p class="subtitle">Transform your voice into otherworldly sounds!</p>
         </div>
 
@@ -196,7 +197,7 @@
             <div class="feature-card">
                 <h3 class="feature-title">🎙️ Voice Transformer</h3>
                 
-                <div class="recording-section">
+            
                     <button class="record-btn" id="recordBtn" onclick="toggleRecording()">🎤<br>START</button>
                     <div class="status-display" id="recordStatus">Ready to transform your voice!</div>
                     <p style="margin-top: 1rem; font-style: italic; text-align: center;">
@@ -205,8 +206,8 @@
                 </div>
 
                 <div class="upload-area" onclick="document.getElementById('audioUpload').click()">
-                    <h4>📁 Or Upload Audio File</h4>
-                    <p>Click here to upload your own audio file for transformation!</p>
+                    <h2>📁 Or Upload Audio File</h2>
+                    <p>Click here to upload your own audio file for transformation!</p><br>
                     <button class="upload-btn" type="button">Choose Audio File</button>
                     <input type="file" id="audioUpload" class="file-input" accept="audio/*" onchange="handleFileUpload(event)">
                 </div>
@@ -229,6 +230,42 @@
             <button class="btn" onclick="closeModal()">Amazing!</button>
         </div>
     </div>
+    <audio id="audio-cow" src="assets/cow-mooing-343423.mp3"></audio>
+    <audio id="audio-sheep" src="assets/sheep-352668.mp3"></audio>
+    <audio id="audio-duck" src="assets/075176_duck-quack-40345.mp3"></audio>
+    <audio id="audio-chicken" src="assets/angry-chicken-imitation-89241.mp3"></audio>
+    <audio id="audio-dog" src="assets/dog-bark-sound-effect-322989.mp3"></audio>
+    <audio id="audio-ribbit" src="assets/croaking-frogs-37065.mp3"></audio>
+    <audio id="audio-trumphet" src="assets/trumpet-fail-242645.mp3"></audio>
+    <audio id="audio-beep" src="assets/beep-boop-151065.mp3"></audio>
+    <audio id="audio-boop" src="assets/boop-101710.mp3"></audio>
+    <audio id="audio-buzz" src="assets/buzz-buzz-95806.mp3"></audio>
+    <audio id="audio-whir" src="assets/electric-motor-whir-77588.mp3"></audio>
+    <audio id="audio-zap" src="assets/zap-127476.mp3"></audio>
+    <audio id="audio-ping" src="assets/happy-message-ping-351298.mp3"></audio>
+    <audio id="audio-trainhorn" src="assets/train-horn-fades-25194.mp3"></audio>
+    <audio id="audio-siren" src="assets/toy-train-whistle-soft-106348.mp3"></audio>
+    <audio id="audio-foghorn" src="assets/train-horn-fades-25194.mp3"></audio>
+    <audio id="audio-airhorn" src="assets/car-horn-6408.mp3"></audio>
+    <audio id="audio-boathorn" src="assets/boat-horn-103003.mp3"></audio>
+    <audio id="audio-truckhorn" src="assets/truck-horn-2-280800.mp3"></audio>
+    <audio id="audio-bikehorn" src="assets/bicycle-horn-7126.mp3"></audio>
+    <audio id="audio-whale1" src="assets/woo-hoo-82843.mp3"></audio>
+    <audio id="audio-whale2" src="assets/weee-337908.mp3"></audio>
+    <audio id="audio-dolphin" src="assets/woo-hoo-82843.mp3"></audio>
+    <audio id="alienAudio" src="assets/alien-talking-312011.mp3"></audio>
+    <audio id="robotAudio" src="assets/weird-talking-47375.mp3"></audio>
+    <audio id="circusAudio" src="assets/weird-talking-47375.mp3"></audio>
+    
+    
+    
+    
+    
+
+
+
+    
+    
 
     
 </body>
