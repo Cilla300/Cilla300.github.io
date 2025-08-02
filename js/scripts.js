@@ -4,7 +4,7 @@
         let recordingTimeout;
         let currentPage = 'mainPage';
 
-        // Weird sounds library
+        
         const weirdSounds = {
             cow: "MOOOOO! 🐄",
             goat: "MAAAAH! 🐐",
@@ -24,7 +24,7 @@
             whir: "WHIRRR! 🌪",
             zap: "ZAP! ⚡",
             ping: "PING! 📡",
-            // Guitar sounds (train/horn themed)
+            
             trainhorn: "CHOO CHOO HOOOOORN! 🚂",
             siren: "WEEEE-OOOOO-WEEEE! 🚨",
             foghorn: "HOOOOOONK! 🌫️",
@@ -34,7 +34,7 @@
             boathorn: "HOOOOORN AHOY! ⛵",
             truckhorn: "HOOOOOONK TRUUUCK! 🚛",
             bikehorn: "HONK HONK! 🚲",
-            // Trumpet sounds (whale/sea themed)
+           
             whale1: "WHOOOOOOO-OOOOOOO! 🐋",
             whale2: "HOOOO-WAAAAAH-OOOOO! 🐋",
             whale3: "CLICK-WHISTLE-OOOOO! 🐋",
@@ -44,7 +44,7 @@
             narwhal: "MYSTICAL-WHOOOOO! 🦄"
         };
 
-        // Page Navigation Functions
+       
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
@@ -67,9 +67,9 @@
             addChaos();
         }
 
-        // Instrument Functions
+        
         function showInstrument(instrumentType) {
-            // Hide all instruments first
+            
             document.getElementById('piano').style.display = 'none';
             document.getElementById('drums').style.display = 'none';
             document.getElementById('guitar').style.display = 'none';
@@ -91,11 +91,11 @@
             const sound = weirdSounds[soundType];
             const audio = document.getElementById(`audio-${soundType}`);
             if (audio) {
-                audio.currentTime = 0; // rewind to start
+                audio.currentTime = 0; 
                 audio.play();
             }
 
-            // Create floating text effect
+            
             const floatingText = document.createElement('div');
             floatingText.textContent = sound;
             floatingText.style.position = 'fixed';
@@ -119,7 +119,7 @@
             addChaos();
         }
 
-        // Recording Functions
+        
         function toggleRecording() {
             const recordBtn = document.getElementById('recordBtn');
             const status = document.getElementById('recordStatus');
@@ -130,7 +130,7 @@
                 recordBtn.innerHTML = '⏹<br>STOP';
                 status.textContent = 'Recording your beautiful voice... (converting to weird sounds)';
 
-                // Simulate weird recording process
+               
                 recordingTimeout = setTimeout(() => {
                     stopRecording();
                 }, 5000);
@@ -158,7 +158,7 @@
 
             
 
-            // Show "playback" of weird sounds
+            
             const weirdResults = [
                 "🤖 BEEP BOOP BEEP (was 'Hello')",
                 "🐄 MOOO MOOO MOO (was 'How are you')",
@@ -190,7 +190,7 @@
                 uploadStatus.textContent = `File "${file.name}" uploaded successfully! 🎵→👽 Transformation complete!`;
                 addChaos();
                 
-                // Simulate processing
+                
                 setTimeout(() => {
                     const transformedResults = [
                         "👽 File transformed into alien communication signals!",
@@ -203,7 +203,7 @@
             }
         }
 
-        // Chaos Functions
+       
         function addChaos() {
             chaos += 10;
             if (chaos > 100) chaos = 100;
@@ -238,7 +238,7 @@
             }, 3000);
         }
 
-        // Easter Egg Functions
+     
         function secretFeature() {
             document.getElementById('modal').style.display = 'flex';
             chaos = 100;
@@ -249,9 +249,9 @@
             document.getElementById('modal').style.display = 'none';
         }
 
-        // Random chaos events
+       
         setInterval(() => {
-            if (Math.random() < 0.05) { // 5% chance every 5 seconds
+            if (Math.random() < 0.05) { 
                 const randomEvents = [
                     () => {
                         const msg = document.createElement('div');
